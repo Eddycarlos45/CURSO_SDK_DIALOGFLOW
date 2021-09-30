@@ -15,6 +15,10 @@ if (result.error) {
   throw result.error
 }
 
+app.get('/chat', (req, res) => {
+  res.sendFile(__dirname + '/views/chat.html')
+})
+
 app.post('/detectIntent', (req, res) => {
 
   let texto = req.body.texto
