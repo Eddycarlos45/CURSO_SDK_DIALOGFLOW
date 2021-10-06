@@ -148,7 +148,7 @@
           $('<li class="replies"><img src="https://cdn.glitch.com/b55990e3-895c-4141-b7d2-3e12d9d61fae%2Fbot.jpeg?1558500587637" alt="" /><p>'
             + texto + '</p></li>').appendTo($('.messages ul'));
 
-          /* } else {
+          } else {
             resp = msg[0].queryResult.fulfillmentMessages;
             
             for( let i=0 ; resp.length; i++){
@@ -193,7 +193,6 @@
                         
             } // for
             
-           */
         }
 
         $(".messages").animate({ scrollTop: $(document).height() }, "fast");

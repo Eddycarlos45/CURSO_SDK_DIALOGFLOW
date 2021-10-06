@@ -19,6 +19,11 @@ app.get('/chat', (req, res) => {
   res.sendFile(__dirname + '/views/chat.html')
 })
 
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/views/login.html')
+})
+
+
 app.post('/detectIntent', (req, res) => {
 
   let texto = req.body.texto
