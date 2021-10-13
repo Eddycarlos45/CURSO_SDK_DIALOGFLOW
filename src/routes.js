@@ -1,6 +1,6 @@
 const dialogflow = require("dialogflow");
 const uuid = require("uuid");
-const  Intent  = require('./utils/IntentBuild')
+const Intent = require('./utils/IntentBuild')
 
 // -----Sessions Client -----
 const projectId = 'curso-sdk-aibp';
@@ -59,6 +59,15 @@ module.exports = (routes) => {
       console.log(error)
     }
 
+  })
+
+  routes.delete('/deleteIntent', async (req, res) => {
+    let params = {
+      name: 'projects/curso-sdk-aibp/agent/intents/c79f9a1e-0343-4ec6-b066-8fd312aec2cd' // Nome interno da Intent
+    }
+
+    let result = await intentsClient.deleteIntent(params);
+    res.json(result)
   })
 
   async function createIntent() {
