@@ -6,54 +6,50 @@
   <meta charset="UTF-8">
 
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!--     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+  <script>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBQYAqbfgaMfmcSLpRdpAHRiG4nDBXurPk",
-        authDomain: "curso-1619b.firebaseapp.com",
-        databaseURL: "https://curso-1619b.firebaseio.com",
-        projectId: "curso-1619b",
-        storageBucket: "curso-1619b.appspot.com",
-        messagingSenderId: "232338219484",
-        appId: "1:232338219484:web:54badf9f4636469b"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script> -->
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAfFugXSGtzpPTW1sAl67GmzL5if0jQcnc",
+      authDomain: "curso-sdk-aibp.firebaseapp.com",
+      projectId: "curso-sdk-aibp",
+      storageBucket: "curso-sdk-aibp.appspot.com",
+      messagingSenderId: "484794843929",
+      appId: "1:484794843929:web:34ffdc7dc926edfe0dbb88"
+    };
 
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
 
-  <!--     <script type="text/javascript">
-      initApp = function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is signed in.
-            //displayName = user.displayName;
-            //photoURL = user.photoURL;    
-            
-            $('<img src="/photo.jpg" alt="" />').appendTo($('.contact-profile'));
-            $('<p>'+displayName+'</p>').appendTo($('.contact-profile'));
 
-            
-            
-            
-          } else {
-            window.location.replace("/login")
-          }
-        }, function(error) {
-          console.log(error);
-        });
-      };
+  <script type="text/javascript">
+    initApp = function () {
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          displayName = user.displayName;
+          photoURL = user.photoURL;
 
-      window.addEventListener('load', function() {
-        initApp()
+          $('<img src="' + photoURL + '" alt="" />').appendTo($('.contact-profile'));
+          $('<p>' + displayName + '</p>').appendTo($('.contact-profile'));
+
+        } else {
+          window.location.replace("/login")
+        }
+      }, function (error) {
+        console.log(error);
       });
-    </script> -->
+    };
+
+    window.addEventListener('load', function () {
+      initApp()
+    });
+  </script>
 
   <!-- Bootstrap -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -130,7 +126,7 @@
         return false;
       }
 
-      $('<li class="sent"><img src="/photo.jpg" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
+      $('<li class="sent"><img src="' + photoURL + '" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
       $('.message-input input').val(null);
       $('.contact.active .preview').html('<span>You: </span>' + message);
       $(".messages").animate({ scrollTop: $(document).height() }, "fast");
@@ -148,51 +144,51 @@
           $('<li class="replies"><img src="https://cdn.glitch.com/b55990e3-895c-4141-b7d2-3e12d9d61fae%2Fbot.jpeg?1558500587637" alt="" /><p>'
             + texto + '</p></li>').appendTo($('.messages ul'));
 
-          } else {
-            resp = msg[0].queryResult.fulfillmentMessages;
-            
-            for( let i=0 ; resp.length; i++){
-              message = resp[i].message;
-              if (message == 'card'){
-                
-                let html = `<li class="replies">
+        } else {
+          resp = msg[0].queryResult.fulfillmentMessages;
+
+          for (let i = 0; resp.length; i++) {
+            message = resp[i].message;
+            if (message == 'card') {
+
+              let html = `<li class="replies">
                     <div class="w3-card-4 test" style="width:90%;max-width:400px;">
                     <img src="`+ resp[i].card.imageUri + `" alt="Avatar" style="width:100%;opacity:0.85">
                     <div class="w3-container">
                     <h3><b>`+ resp[i].card.title + `</b></h3> 
                     <h4><b>`+ resp[i].card.subtitle + `</b></h4>
                     <br>
-                    <button class="w3-button w3-block w3-dark-grey" onclick="window.open('`+ resp[i].card.buttons[0].postback + `');">`+ resp[i].card.buttons[0].text + `</button>
+                    <button class="w3-button w3-block w3-dark-grey" onclick="window.open('`+ resp[i].card.buttons[0].postback + `');">` + resp[i].card.buttons[0].text + `</button>
                     <br> 
                     </div>
                     </div>
                     </li> `
-                
-                
-                   $(html).appendTo($('.messages ul'));
-    
-              }// if card
-              else if (message == 'quickReplies'){     
-                replies = resp[i].quickReplies.quickReplies;
-                var html = '<li class="replies"><h3><b> Escolha uma das Opções da Curso</b></h3><br>';
-                for(var j=0; j < replies.length; j++){
-                  html += '<button class="w3-button w3-white w3-border w3-round-large" onclick="$(\'.message-input input\').val(\'' + replies[j] + '\');newMessage()">'+replies[j]+ '</button>'; 
-                }
-                html += '</li>';
-                $(html).appendTo($('.messages ul'));
-                
-              } // quickReplies
-              else if (message == 'image'){ 
-                
-                let html = '<li class="replies"> <div class="imagem"> <img src="' + resp[i].image.imageUri +  '" class="w3-hover-sepia" style="width:90%;"></div></li>';
-                $(html).appendTo($('.messages ul'));
-                
-                
+
+
+              $(html).appendTo($('.messages ul'));
+
+            }// if card
+            else if (message == 'quickReplies') {
+              replies = resp[i].quickReplies.quickReplies;
+              var html = '<li class="replies"><h3><b> Escolha uma das Opções da Curso</b></h3><br>';
+              for (var j = 0; j < replies.length; j++) {
+                html += '<button class="w3-button w3-white w3-border w3-round-large" onclick="$(\'.message-input input\').val(\'' + replies[j] + '\');newMessage()">' + replies[j] + '</button>';
               }
-              
-                        
-            } // for
-            
+              html += '</li>';
+              $(html).appendTo($('.messages ul'));
+
+            } // quickReplies
+            else if (message == 'image') {
+
+              let html = '<li class="replies"> <div class="imagem"> <img src="' + resp[i].image.imageUri + '" class="w3-hover-sepia" style="width:90%;"></div></li>';
+              $(html).appendTo($('.messages ul'));
+
+
+            }
+
+
+          } // for
+
         }
 
         $(".messages").animate({ scrollTop: $(document).height() }, "fast");
