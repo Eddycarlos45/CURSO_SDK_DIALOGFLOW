@@ -1,12 +1,2 @@
 {
-  "type": "service_account",
-  "project_id": "curso-sdk-aibp",
-  "private_key_id": "5606279d8dca1ea051ea16936f731ea4d78fee5c",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCmfkPoGE/JClRi\nWphnJXP1AlRs42bFM52D0JZl0VzFIrIXKhDwxqA9+HyT3fvWNPM/IM5qkNMvATkm\nr1RgOcAt1cPpi9CzczaC9IbujRqH2e6kxeOjyb0qKXh+eR7R8Bkan6eDC9yUqXq3\nb9hchHDIny6OT/RuywCSFHdE7ODSmXrIT4sJCk4oSL0WmzIKwM4dxokY/KiVeE4F\nOSOebU70/LiVAzHAVml6AR7NqfyVRMsz1xsEHBF/pkBG7D97FCwefVtOrhNR+Ix8\nnrN9LQMYz0t39M1qAQp81/nayxnmwUActUgIBHKG7uVXYNs1Ctdfm+/SqZsefrIn\nx98LLzBjAgMBAAECggEAJ5i/CLuDejJROGUIevuO1PX9YzpADmWEsD1TD5sX37Ct\nP1IbXlA2+xYWdspkIyFLurdQMEsKVtMJJxiqzgneGWiOJATDGXKsw79pOeHoLegY\nWCrSRXls2lKrnBStTku2hLz0x3dyOg8GpwrcH8DF3Ajztxfv78uq8pMYfJWDsMI6\neEs/uRvfudNogY05LfrfvL3YySwgA8VE6YVs9+pqwfrk4mHINriunbbjckfO/v2s\ngTQ5wFf0Fhtu5FoWSvVACsGscmuQ3vJMQ+Dz8ztGFFRCv2EVWoEVj5gpLkei4CF+\n8R3qVc9SO2RmaAj5PM0vod5p7M+9ek4CzTa92SbF4QKBgQDZzpBOKEjE5LtSmo2X\n6dn3n2ZGzCP+lRNluWEXAxkzZEcVW6/Jyzk3JE20gLUF4qHGFuheTt1kuq4Yv6Sr\n6Xuot1oLluDjcHkavXlsvfCyymg1ylQFHuQ3lQc5WiOrUv1LAMXQ1zBVtAYMZuAa\nf+khHET2kKXkqthvNb0v/jhHQwKBgQDDsDYJJKlQFCx/d64yXRSApjZRkxp9gmW7\n3QGN1ktVi5tzdQBaq4ai3EqEiTKZo9obk1MXZQIHV1XwKkKMVUBlYPvCB97fFJmM\nK7UwvDW203wMnBCaxYRYoXDvb7tLdywtgC0hze8r1RNO1/Vi/Ckao+o0vEJVntzH\n4aY/RHgQYQKBgQCVdRwqtZPxn+82qJ1ez/Zk5/l7vVs5t7wewo1wCA1D6ZypeEfx\nFcXGI+A6a1NMnY5a6p87D6z2EO+kReVOniHfzSk56KebCjPf+IKY7uF7Hk9SEeuD\ntAXwahAR99ugFYt/6yDSxMcDGExKOFGxfXJQ6SAdfXaIqf9omJygkTa3FwKBgQCB\nAPVeabDEfcgn7/oCcaJGfUxp0pQwEXqHslaH7rGTH4nHP2aQX2tOifMGFHwrFP2A\nGEs6rPf9ZvHcdb+RS9I8Awd1DkM6xRXEdjvoeOrgL+MjXO8FWRi6ZRNShVHvmgyh\nolIeaug0+S7VV0EJlDp0uYJ4aXNBhoz9qCA0rSqJgQKBgAF3Bw3KPJIMHTg1vWc4\ntFkHbqtJSU+VCBuORzrP1E70Oy90dnTEqfcGZvApovB4VoEQ/Hn65/0SpyY/vKwj\nGsv6qhsgC2/fsIzHgVOXcV8T268c0EHJoCmTV9Ia3NoNXARInpjqnyB7mMR3i5EO\nyMHcegqcjp4OL8pq8OQPWp0u\n-----END PRIVATE KEY-----\n",
-  "client_email": "dialogflow@curso-sdk-aibp.iam.gserviceaccount.com",
-  "client_id": "114281676413721053554",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow%40curso-sdk-aibp.iam.gserviceaccount.com"
 }
