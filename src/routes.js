@@ -15,7 +15,6 @@ const projectAgentPath = intentsClient.projectAgentPath(projectId);
 module.exports = (routes) => {
 
   routes.get('/chat', (req, res) => {
-    console.log(__dirname)
     res.sendFile(__dirname + '/views/chat.html')
   })
 
